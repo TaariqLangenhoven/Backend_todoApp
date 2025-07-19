@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/header.ejs') %>
+<body>
+    <%- include('../partials/navigation.ejs') %>
+    <div>
+        <h1>Home</h1>
+        <% if (note.length > 0) { %>
+        <% note.forEach((i)=>{ %>
+            <a href="">
+            <h3><%= i.title %></h3>
+            <p><%= i.body %></p>
+            </a>
+        <% }) %>
+        <% } else { %>
+            <h3>NO NOTES FOUND</h3>
+        <% }%>
+    </div>
+</body>
+</html>
