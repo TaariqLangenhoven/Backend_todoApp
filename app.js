@@ -2,7 +2,7 @@ const dotenv = require('dotenv')
 const express = require('express')
 const mongoose = require('mongoose')
 const morgan = require('morgan')
-const { title } = require('process')
+const noteRoutes = require('./routes/noteRoutes.js')
 
 //allows for the usage of env files
 dotenv.config()
@@ -52,5 +52,7 @@ app.get('/home',(req,res)=>{
 })
 
 app.get('/create',(req,res)=>{res.render('create', {title: "CREATE NOTE"})})
+
+app.use(noteRoutes)
 
 app.use((req,res)=>{res.render('404', {title: "404"})})
