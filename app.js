@@ -39,17 +39,11 @@ app.use(express.static('public'))
 //enables the reading of data from HTML form submissions.
 app.use(express.urlencoded({extended:true}))
 
+//Middleware for PUT REQUESTS:
+app.use(express.json());
+
 //Routes
 app.get('/',(req,res)=>{res.redirect('home')})
-
-app.get('/home',(req,res)=>{
-     const note = [
-        {title: "Almost finish", body:"Yeahhhh"},
-        {title: "close finish", body:"BOOOOOO"}
-    ]
-
-    res.render('home', {title: "Home" , note})
-})
 
 app.get('/create',(req,res)=>{res.render('create', {title: "CREATE NOTE"})})
 

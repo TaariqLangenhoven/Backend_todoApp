@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/header.ejs') %>
+<body>
+    <%- include('../partials/navigation.ejs') %>
+    <div>
+        <h1>Note Details</h1>
+        <div class="create-blog content">
+        
+        <form action="" method="">
+            <label for="title">Note title</label>
+            <input type="text" id="title" name="title" value="<%= noteData.title %>" required>
+            <label for="body">Note body</label>
+            <textarea id="body" name="body" required><%= noteData.body %></textarea>
+            <button id="deleteBtn" data-del="<%= noteData._id %>">Delete</button>
+            <button id="updateBtn" data-up="<%= noteData._id %>">Update</button>
+        </form>
+        
+    </div>
+    </div>
+</body>
+<script src="/handleDetails.js"></script>
+</html>

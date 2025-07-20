@@ -3,11 +3,12 @@
 <%- include('../partials/header.ejs') %>
 <body>
     <%- include('../partials/navigation.ejs') %>
-    <div>
-        <h1>Home</h1>
-        <% if (note.length > 0) { %>
-        <% note.forEach((i)=>{ %>
-            <a href="">
+    <div class="notes content" >
+        <h1 >Home</h1>
+        <% if (allNotes.length > 0) { %>
+        <% allNotes.forEach((i)=>{ %>
+                    
+            <a href="/home/<%= i._id %>">
             <h3><%= i.title %></h3>
             <p><%= i.body %></p>
             </a>
